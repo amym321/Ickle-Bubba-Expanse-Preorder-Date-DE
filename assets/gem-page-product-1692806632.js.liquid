@@ -190,7 +190,68 @@
       }));
     }
   });
-})(window.GemQuery || jQuery);(function( jQuery ){
+})(window.GemQuery || jQuery);
+    (function( jQuery ){
+  try {
+    var $module = jQuery('#m-1692806973860').children('.module');
+    var single = $module.attr('data-single');
+    var openDefault = $module.attr('data-openDefault');
+    var openTab = $module.attr('data-openTab');
+    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+    if(openDefault == 0 || openDefault == '0') {
+      openTab = '0';
+    }
+
+    $module.gfAccordion({
+      single: single,
+      openTab: openTab,
+      mode: mode,
+      onChanged: function() {	
+        // Fix (P) Desc read more bug	
+        $module.find('.module-wrap[data-label="(P) Description"]').each(function(index, el) {	
+          if (jQuery(el).children('.module').data('gfv3productdesc') != undefined) {	
+            jQuery(el).children(".module").data("gfv3productdesc").initReadMore();	
+          }	
+        })	
+      }
+    });
+
+    var borderColor = $module.attr('data-borderColor');
+    var borderSize = $module.attr('data-borderSize');
+
+    $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+    $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+  } catch(err) {}
+})( window.GemQuery || jQuery );
+  
+    
+  
+    (function( jQuery ){
+  var $module = jQuery('#m-1692806973772').children('.module');
+  $module.gfV3ProductDesc();
+})( window.GemQuery || jQuery );
+  
+    
+  (function( jQuery ){
+  // var $module = jQuery('#m-1692806973736').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+    
+  
+    (function( jQuery ){
+  // var $module = jQuery('#m-1692806973734').children('.module');
+  // You can add custom Javascript code right here.
+})( window.GemQuery || jQuery );
+  
+    
+  
+    
+  
+    
+  
+    
+  (function( jQuery ){
   // var $module = jQuery('#m-1680535405161').children('.module');
   // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
@@ -204,4 +265,4 @@
   // var $module = jQuery('#m-1683102384122').children('.module');
   // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
-  window.__gfFlowActions = []; window.__gfFlowActions.push([{"source":{"id":"#e-1685454784107","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685454784107","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1685454784010","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685454784010","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]);window.__gfFlowActions.push([{"source":{"id":"#m-1685454784124","target":".module"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685454784031","actions":[{"key":"scrollToId","type":2,"data":{"delay":0,"duration":500,"marginTop":30}}],"rename":"Text Block: #e-1685454784031"}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1685454950053","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685454950053","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1685455173204","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685455173204","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1685454967989","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685454967989","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1685455207503","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685455207503","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1685455231232","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685455231232","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1685455006055","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685455006055","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1685455259200","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685455259200","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]);window.__gfFlowActions.push([{"source":{"id":"#e-1685455039450","target":".gf_button"},"events":[{"key":"click"}],"targets":[{"id":"#e-1685455039450","actions":[{"key":"slideUp","type":2,"data":{"delay":0,"duration":350}}]}]}]); window.__gfV1FlowActions.init();
+  
