@@ -2,6 +2,42 @@
   "type": "footer",
   "name": "t:sections.footer-group.name",
   "sections": {
+    "a4a12bc8-a926-4d52-a9c9-6dd9aa0b066c": {
+      "type": "countdown",
+      "blocks": {
+        "sections--20222604312849__a4a12bc8-a926-4d52-a9c9-6dd9aa0b066c-content-1": {
+          "type": "content",
+          "settings": {
+            "heading": "REGISTRIEREN SIE SICH",
+            "heading_size": "h2",
+            "text": "<p>Melden Sie sich jetzt an, um informiert, inspiriert und vernetzt zu bleiben und als Erster von spannenden Aktionen, Sonderrabatten und exklusiven Angeboten zu profitieren!<\/p>",
+            "content_alignment": "center"
+          }
+        },
+        "sections--20222604312849__a4a12bc8-a926-4d52-a9c9-6dd9aa0b066c-button-1": {
+          "type": "button",
+          "settings": {
+            "button_link": "shopify:\/\/pages\/sich-einschreiben",
+            "button": "JETZT ANMELDEN",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "sections--20222604312849__a4a12bc8-a926-4d52-a9c9-6dd9aa0b066c-content-1",
+        "sections--20222604312849__a4a12bc8-a926-4d52-a9c9-6dd9aa0b066c-button-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "banner",
+        "full_width": true,
+        "color_scheme": "2",
+        "blur_image": false,
+        "overlay_color": "#000",
+        "overlay_opacity": 0,
+        "lazyload_images": true
+      }
+    },
     "35160d43-9054-4b3c-9288-c421eea8fdae": {
       "type": "advanced-content",
       "blocks": {
@@ -143,6 +179,7 @@
     }
   },
   "order": [
+    "a4a12bc8-a926-4d52-a9c9-6dd9aa0b066c",
     "35160d43-9054-4b3c-9288-c421eea8fdae",
     "b67c466b-d14f-4855-9ade-f4e699c85d09",
     "footer-promotions",
