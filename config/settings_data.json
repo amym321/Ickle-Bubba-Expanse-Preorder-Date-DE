@@ -952,7 +952,10 @@
       ".section-header__title {font-size: 30px; text-transform: uppercase;}",
       ".tmenu_wrapper,.tmenu_wrapper *,.tmenu_wrapper:after,.tmenu_wrapper :after,.tmenu_wrapper:before,.tmenu_wrapper :before {text-transform: uppercase !important;}",
       ".h3,h3 {line-height: 17px;}",
-      ".sale-red a {color: #ba1b41 !important; font-weight: 600 !important;}"
+      ".sale-red a {color: #ba1b41 !important; font-weight: 600 !important;}",
+      ".spr-badge {padding-top: 10px;}",
+      ".grid-product .spr-badge-starrating {font-size: 14px;}",
+      ".grid-product .spr-badge-caption {font-size: 14px;}"
     ]
   }
 }
