@@ -1,5 +1,5 @@
 
-    {% if isGpTemplate and (shop.metafields.gpGlobalConfigs.enableProductSchema == "true" or shop.metafields.gpGlobalConfigs.enableProductSchema == blank) %}
+    {% if isGpTemplate and shop.metafields.gpGlobalConfigs.enableProductSchema == "true" or shop.metafields.gpGlobalConfigs.enableProductSchema == blank %}
       {% case request.page_type %}
         {% when "page" %}
         {% when "product" %}
@@ -97,7 +97,7 @@
                 "image":[{{product.featured_image.src|img_url:image_size|prepend:"https:"|json}}],
               {%- endif -%}
               "description":{{product.description|strip_html|json}},
-              {%- if cv_schema.sku!=blank -%}
+              {%- if cv_schema.sku.blank -%}
                 "sku":{{cv_schema.sku|json}},
               {%- endif -%}
               "brand":{"@type": "Brand","name":{{product.vendor|json}}},
@@ -117,4 +117,18 @@
         {% when "blog" %}
       {% endcase %}
     {% endif %}
-  
+  {%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{% if isGpTemplate and (shop.metafields.gpGlobalConfigs.enableProductSchema
+    == "true" or shop.metafields.gpGlobalConfigs.enableProductSchema == blank) %}'
+  to: '{% if isGpTemplate and shop.metafields.gpGlobalConfigs.enableProductSchema
+    == "true" or shop.metafields.gpGlobalConfigs.enableProductSchema == blank %}'
+  position: 5..156
+- from: "{%- if cv_schema.sku!=blank -%}"
+  to: "{%- if cv_schema.sku.blank -%}"
+  position: 4227..4257
+{%- endcomment -%}

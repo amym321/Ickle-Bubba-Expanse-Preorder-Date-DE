@@ -51,7 +51,7 @@
   data-cart-subtotal="{{ cart.total_price }}"
   data-date-today="{{ date-today }}"
   data-cart-preorder="{% if order-date > date-today %}{{ order-date | date: "%d %B" }}{% endif %}"
-  data-cart-preorder-s="{% if order-date > date-today %}{{ order-date | date: "%s }}{% endif %}"
+  data-cart-preorder-s="{% if order-date > date-today %}{{ order-date | date | s }}{% endif %}"
   data-cart-preorder-iso="{% if order-date > date-today %}{{ order-date | date: '%Y-%m-%d' }}{% endif %}"
   >
   {% for item in cart.items %}
@@ -69,3 +69,13 @@
     {% endfor %}
   </div>
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '{{ order-date | date: "%s }}'
+  to: "{{ order-date | date | s }}"
+  position: 2241..2268
+{% endcomment %}

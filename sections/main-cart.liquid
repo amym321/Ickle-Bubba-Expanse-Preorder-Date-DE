@@ -45,7 +45,7 @@
           {% endif %}
 
           {% comment %} pre-order date for dispatch - am {% endcomment %}
-          {% render 'cart-preorder-dates', cart.items: cart.items %}
+          {% render 'cart-preorder-dates', items: cart.items %}
 
           
           <div class="cart__item-sub cart__item-row cart__item--subtotal">
@@ -115,4 +115,13 @@
 }
 {% endschema %}
 
-<!-- GPO installed -->
+<!-- GPO installed -->{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'cart-preorder-dates', cart.items: cart.items %}"
+  to: "{% render 'cart-preorder-dates', items: cart.items %}"
+  position: 2603..2656
+{%- endcomment -%}

@@ -1,7 +1,7 @@
 
     {%-liquid
       assign gpTemplateSuffix = template.suffix
-      assign isGpSplitSuccess = gpTemplateSuffix | split: "-" | size == 3
+      assign isGpSplitSuccess = gpTemplateSuffix | split: "-" | size
       if gpTemplateSuffix contains "gem-" and gpTemplateSuffix contains "-template" and isGpSplitSuccess
         assign isV6GpTemplate = true
       endif
@@ -65,4 +65,13 @@
       {% render 'gp-rich-snippets', GEMPAGES: GEMPAGES, isGpTemplate: isGpTemplate %}
       {% render 'gp-header-custom-code', GEMPAGES: GEMPAGES, isGpTemplate: isGpTemplate %}
     {% endif %}
-  
+  {%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: '      assign isGpSplitSuccess = gpTemplateSuffix | split: "-" | size == 3'
+  to: '      assign isGpSplitSuccess = gpTemplateSuffix | split: "-" | size'
+  position: 63..131
+{%- endcomment -%}
